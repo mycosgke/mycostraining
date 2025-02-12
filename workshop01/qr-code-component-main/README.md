@@ -4,7 +4,7 @@ This is a solution to the [QR Code Component challenge on Frontend Mentor](https
 
 ## Screenshot
 
-![Screenshot](comleted/Screenshot%202568-02-12%20at%2011.06.00 PM.png)
+![Screenshot](comleted/screen.png)
 
 ## Live Demo
 
