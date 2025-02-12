@@ -24,3 +24,5 @@ To get a local copy up and running, follow these steps:
 1. Clone the repository:
    ```sh
    git clone https://github.com/mycosgke/mycostraining.git
+
+2. Other [Sample](https://www.frontendmentor.io/learning-paths/getting-started-on-frontend-mentor-XJhRWRREZd/steps/67a8cbc0a79a6cf6185db5d0/challenge/start)
