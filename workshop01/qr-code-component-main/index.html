@@ -3,64 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Outfit font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        .card {
-            background: white;
-            width: 300px;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
-
-        .qr-container {
-            background: #4285f4;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .qr-code {
-            width: 100%;
-            max-width: 200px;
-            height: auto;
-        }
-
-        .title {
-            color: #1a1a1a;
-            font-size: 18px;
-            font-weight: 600;
-            margin: 0 0 12px 0;
-            padding: 0 20px;
-        }
-
-        .description {
-            color: #666;
-            font-size: 14px;
-            line-height: 1.5;
+        * {
             margin: 0;
-            padding: 0 20px;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colors using provided HSL values */
+            --white: hsl(0, 0%, 100%);
+            --slate-300: hsl(212, 45%, 89%);
+            --slate-500: hsl(216, 15%, 48%);
+            --slate-900: hsl(218, 44%, 22%);
         }
 
         body {
-            background: #f0f4f8;
+            background-color: var(--slate-300);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0;
             padding: 20px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1440px;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: var(--slate-300);
+            border-radius: 30px;
+            box-shadow:
+                20px 20px 60px rgba(166, 180, 200, 0.7),
+                -20px -20px 60px rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dot menu pattern */
+        .dot-menu {
+            position: absolute;
+            left: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+            width: 24px;
+        }
+
+        .dot {
+            width: 4px;
+            height: 4px;
+            background-color: rgb(55, 188, 191);
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+
+        .card {
+            background: var(--white);
+            width: 100%;
+            max-width: 320px;
+            padding: 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .qr-container {
+            background: #4285f4;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qr-code {
+            width: 100%;
+            height: auto;
+        }
+
+        .title {
+            color: var(--slate-900);
+            font-size: 1.375rem; /* 22px */
+            font-weight: 700;
+            margin-bottom: 16px;
+            padding: 0 12px;
+            line-height: 1.4;
+        }
+
+        .description {
+            color: var(--slate-500);
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.6;
+            padding: 0 12px;
+            margin-bottom: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 375px) {
+            .container {
+                padding: 15px;
+                border-radius: 20px;
+            }
+
+            .card {
+                max-width: 100%;
+                margin: 15px;
+            }
+
+            .dot-menu {
+                left: 15px;
+            }
+        }
+
+        /* Ensure minimum width support */
+        @media (max-width: 320px) {
+            .container {
+                padding: 10px;
+            }
+
+            .card {
+                padding: 12px;
+            }
+        }
+
+        /* Desktop layout */
+        @media (min-width: 1440px) {
+            .container {
+                padding: 40px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="qr-container">
-            <img src="images/image-qr-code.png" alt="QR Code" class="qr-code">
+    <div class="container">
+        <!-- Dot menu pattern -->
+        <div class="dot-menu">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-        <h2 class="title">Improve your front-end skills by building projects</h2>
-        <p class="description">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+
+        <div class="card">
+            <div class="qr-container">
+                <img src="images/image-qr-code.png" alt="QR Code" class="qr-code">
+            </div>
+            <h2 class="title">Improve your front-end skills by building projects</h2>
+            <p class="description">Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+        </div>
     </div>
 </body>
 </html>
