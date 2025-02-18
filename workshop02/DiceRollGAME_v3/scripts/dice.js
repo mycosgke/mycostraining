@@ -1,11 +1,11 @@
-// Create a namespace for the dice game
 const DiceGame = {
     // Cache DOM elements
     elements: {
         die1: null,
         die2: null,
         sumDisplay: null,
-        button: null
+        button: null,
+        diceSound: null
     },
 
     // Initialize the game
@@ -15,6 +15,7 @@ const DiceGame = {
         this.elements.die2 = document.getElementById('die2');
         this.elements.sumDisplay = document.getElementById('sum');
         this.elements.button = document.querySelector('button');
+        this.elements.diceSound = document.getElementById('diceSound');
 
         // Initial roll
         this.rollDice();
@@ -49,6 +50,14 @@ const DiceGame = {
         // Disable button during animation
         this.elements.button.disabled = true;
 
+        // Play dice roll sound
+        if (this.elements.diceSound) {
+            this.elements.diceSound.currentTime = 0;
+            this.elements.diceSound.play().catch(error => {
+                console.log('Audio playback failed:', error);
+            });
+        }
+
         // Add rolling animation
         this.elements.die1.classList.add('rolling');
         this.elements.die2.classList.add('rolling');
@@ -66,9 +75,7 @@ const DiceGame = {
             this.updateDots(this.elements.die1, value1);
             this.updateDots(this.elements.die2, value2);
             this.elements.sumDisplay.textContent = `Sum: ${sum}`;
-            updateResult
             this.elements.button.disabled = false;
-            //this.elements.resultMessage.className = `result-message ${category.class}`;
             this.updateResult(sum);
         }, 500);
     }

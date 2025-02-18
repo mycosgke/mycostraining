@@ -10,6 +10,10 @@
     <h1>Animated Dice Roll</h1>
     <p class="instruction">Click the button to roll the dice.</p>
 
+    <div class="banner-image">
+        <img src="images/dice-women.jpg" alt="Decorative casino theme image" class="theme-image">
+    </div>
+
     <div class="sum-container">
         <div id="sum" class="sum"></div>
         <div id="resultMessage" class="result-message"></div>
@@ -37,6 +41,8 @@
     <div class="controls">
         <button onclick="DiceGame.rollDice()">Roll Dice</button>
     </div>
+
+    <audio id="diceSound" src="sounds/dice-roll.mp3"></audio>
     <script src="scripts/dice.js"></script>
 </body>
 </html>
