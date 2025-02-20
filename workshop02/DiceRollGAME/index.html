@@ -1,31 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Animated Dice Roll</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <h1>Animated Dice Roll</h1>
-    <p>Click the button to roll the dice.</p>
-    <h1 id="sum">7</h1>
-    <div class="dice" id="dice">
-      <div class="die" id="die1">
-        <i class="fa-solid fa-dice-one" style="font-size: 3.5rem"></i>
-      </div>
-      <div class="die" id="die2">
-        <i class="fa-solid fa-dice-six" style="font-size: 3.5rem"></i>
-      </div>
+</head>
+<body>
+    <br>
+    <h1>ทอยลูกเต๋าเพื่อคนไทย</h1>
+
+    <div class="sum-container">
+        <div id="sum" class="sum"></div>
+        <div id="resultMessage" class="result-message"></div>
     </div>
-    <button class="btn" onclick="rollDice()">Roll Dice</button>
+
+    <div class="dice-container">
+        <div class="die" id="die1" data-value="1">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="die" id="die2" data-value="1">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        <div class="die" id="die3" data-value="1">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+    </div>
+
+    <!-- TODO:
+    Don't implement yet, next sprint!:) -->
+    <!-- <div class="bet-amount">
+        <label>จำนวนเงินเดิมพัน: ฿</label>
+        <input type="number" id="betAmount" min="10" max="1000" step="10" value="10">
+    </div> -->
+
+    <div class="controls">
+        <button onclick="DiceGame.rollDice()">โยนเลย</button>
+    </div>
+    <audio id="diceSound" src="sounds/dice-roll.mp3"></audio>
     <script src="scripts/dice.js"></script>
-  </body>
+    <br>
+    <br>
+    <br>
+    <div class="dice-container-buttom">
+        <p class="instruction">สูง-ต่ำ<br>
+        ต่ำ: แต้มรวม 4-10<br>
+        สูง: แต้มรวม 11-17<br>
+        ถ้าออก 3 ลูกเป็นเลขเดียวกัน (ตอง) เจ้ามือกินหมด</p>
+
+        <p class="instruction">แทงเลขเดียว<br>
+        เช่น 1, 2, 3, 4, 5, 6<br>
+        ถ้าออกเลขนั้นก็ได้เงินตามอัตราต่อรอง </p>
+
+        <p class="instruction">โต๊ดเลข<br>
+        แทง 2 เลขพร้อมกัน เช่น 3 กับ 5<br>
+        ถ้าลูกเต๋าออกเลขที่แทงไว้ก็ได้เงิน</p>
+
+        <p class="instruction">ตอง<br>
+        แทงว่าทั้งสามลูกจะออกเลขเดียวกัน เช่น ตอง 2, ตอง 5<br>
+        ถ้าออกตามที่แทงไว้จะได้อัตราจ่ายสูงมาก</p>
+    </div>
+</body>
 </html>
