@@ -1,14 +1,10 @@
-# Frontend Mentor - QR Code Component
+# JavaScript in Action
 
 This is a solution to the [JavaScript in Action by Khem]
 
 ## Screenshot
 
-![Screenshot](comleted/screen.png)
-
-## Live Demo
-
-[View Live](https://your-live-site.com)
+![Screenshot](completed/screen.png)
 
 ## Built With
 
